@@ -9,9 +9,14 @@ with open(sys.argv[1], "r") as fh:
 
 for line in lines:
     line = line.strip()
-    print(len(line))
+    if line.startswith(">"):
+        header = line
+    else:
+        length = len(line)
+        print(length, header)
 
 
+## 
 ## line.strip() removes the last "\n" line
 
 
